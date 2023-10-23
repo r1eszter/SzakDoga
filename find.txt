@@ -1,4 +1,0 @@
-localhost/anime_record_keeping_system/home.php
-
-<?php include('components/header.html'); ?>
-<?php include('components/footer.html'); ?>
