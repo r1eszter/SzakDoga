@@ -1,0 +1,169 @@
+body {
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+/* japanese look alike font */
+@font-face {
+    font-family: MainFont;
+    src: url('myfont.ttf');
+}
+
+/* the table style for all */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 5%;
+    position: absolute;
+    z-index: 1;
+}
+
+/* the head of each table */
+th {
+    background-color: crimson;
+    color: white;
+}
+
+tr:hover {
+    background-color: rgb(233, 90, 90);
+}
+
+/* anime and manga table hidden by default */
+.at, .mt {
+    display: none;
+}
+
+.synopsis {
+    text-align: left;
+    width: 50%;
+}
+
+/* Home icon */
+.home i{
+    color: rgb(128, 0, 0);
+    font-size: 25px;
+    margin-top: 2%;
+    margin-left: 15px;
+    position: fixed;
+}
+
+/* Admin title */
+.name {
+    width: fit-content;
+    text-align: left;
+    font-family: MainFont;
+    margin-left: 5%;
+    color: #000000ce;
+    position: fixed;
+}
+
+/* User, Anime, Manga choose for the table view */
+.choose {
+    font-family: MainFont;
+    color: rgb(78, 2, 2);
+    position: fixed;
+    margin-left: 40%;
+    margin-top: 2%;
+    font-size: 25px;
+}
+
+/* User, Anime, Manga labels for the table view */
+.user, .anime, .manga {
+    padding: 15px;
+}
+
+
+
+
+/* FORM part */
+/* Button to open the form */
+.add-button {
+    background-color: #555;
+    color: white;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    width: 150px;
+    right: 10px;
+    font-family: MainFont;
+    font-size: 25px;
+    margin-top: 1%;
+}
+
+
+/* The popup form - hidden by default */
+.form-popup {
+    width: 450px;
+    display: none;
+    position: fixed;
+    top: 45px;
+    right: 50px;
+    font-family: MainFont;
+    z-index: 3;
+}
+
+/* Form container */
+.form-container {
+    width: 100%;
+    padding-left: 10px;
+    background-color: white;
+}
+
+/* Input fields */
+.form-container input {
+    width: 85%;
+    padding: 15px;
+    border: none;
+    background: #f1f1f1;
+}
+
+.input-container {
+    display: flex;
+    width: 90%;
+    margin-bottom: 5px;
+}
+
+.icon {
+    padding-top: 10px;
+    background: rgb(59, 59, 59);
+    color: white;
+    min-width: 30px;
+    text-align: center;
+}  
+
+/* Input focus */
+.form-container input:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    margin-top: 1%;
+    margin-left: 5%;
+    width: 30%;
+    padding: 15px 10px;
+    border: none;
+    cursor: pointer;
+    width: 85%;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+
+
+/* cancel button */
+.form-container .cancel {
+    background-color: red;
+}
+
+/* hover effects to buttons */
+.form-container .btn:hover, .add-button:hover {
+    opacity: 1;
+}
+

@@ -33,7 +33,7 @@
                 $_SESSION['roles'] = $row['roles'];
             }
             else {
-                echo "<div class='alert'> Invalid username or password! <br> Try again. </div>";            
+                echo "<div class='alert'> Invalid username or password! <br> Try again. </div>";
             }    
     }
 ?>

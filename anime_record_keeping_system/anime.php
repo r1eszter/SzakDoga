@@ -12,7 +12,7 @@
   <!-- name, icon img, css, scr -->
   <title>Animes</title>
   <link rel = "icon" href = "img/jp.png" type = "image/x-icon">
-  <link href="design/anime.css" rel="stylesheet" type="text/css" >
+  <link href="anime.css" rel="stylesheet" type="text/css" >
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
   <!-- script for the roll gallery -->
@@ -21,9 +21,17 @@
 
 <body>
     <!-- webpage name -->
-    <div class="name"> Anime Above All </div>
+    <div class="top">
+        <div class="name"> Anime Above All </div>
 
-    <!-- draggable image slider -->
+    </div>
+
+    <div class="mid">
+        <h3>Creator's TOP 10</h3>
+    </div>
+
+
+    <!-- draggable image slider (TOP 10) -->
     <div class="wrapper">
         <i id="left" class="fa-solid fa-angle-left"></i>
         <div class="card">
@@ -41,7 +49,19 @@
         <i id="right" class="fa-solid fa-angle-right"></i>
     </div>
 
-    <!-- MAKE IT MULTIPLE TIMES! -->
+
+    <!-- square images -->
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
     <!-- GET THE PHOTOS FROM DATABASE -->
 </body>
 

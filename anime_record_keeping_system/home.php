@@ -38,7 +38,7 @@
   <!-- name, icon img, css, scr -->
   <title>Home</title>
   <link rel = "icon" href = "img/jp.png" type = "image/x-icon">
-  <link href="design/home.css" rel="stylesheet" type="text/css" >
+  <link href="home.css" rel="stylesheet" type="text/css" >
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,7 +61,7 @@
                     /* while($row = $pfp->fetch_assoc()) {
                         echo '<img src="data:image/jpg;charset=utf8;base64,'.base64_encode( $row['image'] ).'"/>';
                     } */
-                    echo "<img class='pfp' src=\"img/".$_SESSION['username'] ."PFP.jpg\" alt=\"PFP\" />";
+                    echo "<a href='myacc.php'><img class='pfp' src=\"img/".$_SESSION['username'] ."PFP.jpg\" alt=\"PFP\" /> </a>";
                     echo "<h2 class='uname'> ".$_SESSION['username'] ." </h2>";
             }
         ?>
@@ -71,13 +71,14 @@
             <!-- the side bar links (working: login, signup, home) -->
             <?php 
                 if ($_SESSION['loggedin'] != true) {
-                    echo "<a href='login.php'> Login </a>";
-                    echo "<a href='signup.php'> Sign Up </a>";
+                    echo "<a href='login.php' class='origina'> Login </a>";
+                    echo "<a href='signup.php' class='origina'> Sign Up </a>";
                 } 
                 else {
-                    echo "<a href='myacc.php'> My Account </a>";
+                    /* Does the img enough for link? */
+                    /* echo "<a href='myacc.php' class='newa'> My Account </a>"; */
                     if ( 'admin' == $_SESSION['roles'] ) {
-                        echo "<a href='admin.php'> Admin Site </a>";
+                        echo "<a href='admin.php' class='newa'> Admin Site </a>";
                     }
                 }
             ?>
@@ -87,7 +88,8 @@
                 <form action="home.php" method="POST">
                     <input type="text" placeholder="Search.." id="search" name="search">
                     <!-- do I need a button? -->
-                    <!-- <button type="submit"><i class="fa fa-search"></i></button>-->                </form>
+                    <!-- <button type="submit"><i class="fa fa-search"></i></button>-->                
+                </form>
             </div>
         </div>
     </div>
