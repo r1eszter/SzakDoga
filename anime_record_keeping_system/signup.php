@@ -1,6 +1,7 @@
 <?php $pagename='SIGNUP'; 
     $exists=false;
     session_start();
+    $backgroundImage = 'url("img/login.png")';
         
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         
@@ -38,14 +39,24 @@
                 //mail($email, "Welcome Letter", $msg);
             }
             else {
-                echo "<div class='alert'> Passwords do not match! <br> Make sure to type the same password for both place! </div>";
+                /* passwords dont mach */
+                $backgroundImage = 'url("img/psw_alert.png")';
             }	
         }// end if
         
         if($num>0)
         {
-            echo "<div class='alert'> Username already in use sorry. <br> Please figure out a new one. </div>";
+            /* username already in use */
+            $backgroundImage = 'url("img/usern_alert.png")';
         }
+
+        echo '<style>';
+        echo '#myDiv {background-image: '.$backgroundImage.';}';
+        echo '#myDiv {width : 70%;}';
+        echo '#myDiv {height : 90%;}';
+        echo '#myDiv {margin-left : -8%;}';
+        echo '#myDiv {margin-top : 7%;}';
+        echo '</style>';
         
     }	
 ?>
@@ -55,42 +66,14 @@
 <html lang="en">
 <head>  
     <title>Sign Up</title>  
-    <link href="sign.css" rel="stylesheet" type="text/css" >   
-
+    <link href="signup.css" rel="stylesheet" type="text/css" >   
+    <link rel = "icon" href = "img/jp.png" type = "image/x-icon">
+    
     <style>
         body {
-            background-image: url("img/backgrd.jpg"); 
-        }
-
-        .great {
-            margin: auto;
-            margin-top: 10px;
-            width: fit-content;
-            height: 50px;
-            border: none;
-            text-align: center;
-            border-radius: 19px;
-            background: #0b9e00;
-            box-shadow: inset -29px -29px 44px #065400,
-            inset 29px 29px 44px #10e800;
-            color: #fff;
-            font-size: 20px;
-        }
-
-        .alert {
-            margin: auto;
-            margin-top: 10px;
-            width: fit-content;
-            height: 50px;
-            border: none;
-            padding: 5px;
-            text-align: center;
-            border-radius: 19px;
-            background: #9e0000;
-            box-shadow: inset -29px -29px 44px #540000,
-            inset 29px 29px 44px #e80000;
-            color: #fff;
-            font-size: 20px;
+            background-image: url("img/background.jpg"); 
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         .title {
@@ -103,48 +86,38 @@
 
 <body>
 
-    <div class="sidenav">
-        <p class="name"> Anime <br> Above All </p>
+    <!-- I wanna make it upper -->
+    <div class="uppernav">
+        <a href="home.php"> <div class="name">  Anime Above All </div> </a>
 
-        <?php 
-            if ($_SESSION['loggedin'] != true) {
-                echo "<img class='pfp' src=\"img/nopfp.jpg\" alt=\"PFP\" />";
-                echo "<h2 class='uname'> login first </h2>";
-            }
-            else {
-                     /*PFP database try*/
-                    /* while($row = $pfp->fetch_assoc()) {
-                        echo '<img src="data:image/jpg;charset=utf8;base64,'.base64_encode( $row['image'] ).'"/>';
-                    } */
-                    echo "<img class='pfp' src=\"img/".$_SESSION['username'] ."PFP.jpg\" alt=\"PFP\" />";
-                    echo "<h2 class='uname'> ".$_SESSION['username'] ." </h2>";
-    
-            }
-        ?>
-
-        <br><br>
-
-        <a href="home.php"> <i class="material-icons">home</i> Home </a>
-        <a href="login.php"> <i class="material-icons">login</i> Login </a>
+        <div class="minis">
+            <a class="minibut" href="login.php"> <button> <i class="material-icons">face</i> </button> </a>
+        </div>
     </div>
 
+
+    <!-- image change try -->
+    <div id="myDiv" class="img_there"></div>
+
+
+    <!-- SIGNUP FORM -->
     <div class="inner">  
         <div class="title"> Sign Up </div>  
         <form name="f2" action="signup.php" method="POST">  
             <div>   
-                <input placeholder="UserName" type="text" id="user" name="user" oninvalid="InvalidMsg(this);" required/>  
+                <input placeholder="UserName" type="text" id="user" name="user" value="<?php echo isset($_POST['user']) ? htmlspecialchars($_POST['user']) : ''; ?>" oninvalid="InvalidMsg(this);" required/>  
             </div> 
 
             <div>  
-                <input placeholder="Email" type="email" id="email" name="email" oninvalid="InvalidMsg(this);" required/>  
+                <input placeholder="Email" type="email" id="email" name="email" value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>" oninvalid="InvalidMsg(this);" required/>  
             </div> 
 
             <div>   
-                <input placeholder="Password" type="password" id="pass" name="pass" oninvalid="InvalidMsg(this);" required/>  
+                <input placeholder="Password" type="password" id="pass" name="pass" value="<?php echo isset($_POST['pass']) ? htmlspecialchars($_POST['pass']) : ''; ?>" oninvalid="InvalidMsg(this);" required/>  
             </div> 
 
             <div>  
-                <input placeholder="Password Again" type="password" id="againp" name="againp" oninvalid="InvalidMsg(this);" required/>  
+                <input placeholder="Password Again" type="password" id="againp" name="againp" value="<?php echo isset($_POST['againp']) ? htmlspecialchars($_POST['againp']) : ''; ?>" oninvalid="InvalidMsg(this);" required/>  
             </div> 
             
             <button type="submit">

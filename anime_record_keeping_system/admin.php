@@ -19,7 +19,7 @@
     <head>
         <!-- web page name & css -->
         <title>Admin</title>
-        <link href="design/admin.css" rel="stylesheet" type="text/css" >
+        <link href="admin.css" rel="stylesheet" type="text/css" >
         <!-- Icon library -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>

@@ -2,7 +2,6 @@
     require('components/connection.php');
     session_start();
 
-
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         // Include file which makes the
 	    // Database Connection.
@@ -23,7 +22,12 @@
                exit;
         }  
         else{  
-            echo "<h1> There is no anime like this in the database yet. </h1>";  
+            echo "<div class='alert' id='alert'>  </div>";  
+            echo "<script>
+                setTimeout(function() {
+                    document.getElementById('alert').style.display = 'none';
+                }, 5000);
+            </script>";
         } 
     }
 ?>
@@ -71,14 +75,14 @@
             <!-- the side bar links (working: login, signup, home) -->
             <?php 
                 if ($_SESSION['loggedin'] != true) {
-                    echo "<a href='login.php' class='origina'> Login </a>";
-                    echo "<a href='signup.php' class='origina'> Sign Up </a>";
+                    echo "<a href='login.php' class='origina'> login </a>";
+                    echo "<a href='signup.php' class='origina'> sign up </a>";
                 } 
                 else {
                     /* Does the img enough for link? */
                     /* echo "<a href='myacc.php' class='newa'> My Account </a>"; */
                     if ( 'admin' == $_SESSION['roles'] ) {
-                        echo "<a href='admin.php' class='newa'> Admin Site </a>";
+                        echo "<a href='admin.php' class='newa'> admin site </a>";
                     }
                 }
             ?>
@@ -110,11 +114,11 @@
 
 
         <!-- culture -->
-        <div class="culture">
-
-            <div class="dresses">
+        <div class="jc">
+            <!-- traditonal dresses, people, architecture, attractions -->
+            <div class="culture">
                 <h2>JAPANESE CULTURE</h2>
-                <a href="https://sakura.co/blog/a-look-into-japanese-traditional-clothing/"><img src="img/home1.jpg" alt="img" draggable="false" title="Traditional dresses"></a>
+                <a href="culture.php"><img src="img/home1.jpg" alt="img" draggable="false" title="Japan & The Culture"></a>
             </div>
 
             <div class="festivals">
@@ -126,13 +130,13 @@
             </div>
 
             <div class="food">
-                <a href="https://www.japancentre.com/en/page/156-30-must-try-japanese-foods"><img src="img/food.jpg" alt="img" draggable="false" title="Food & Resturants"></a>
+                <a href="https://www.japancentre.com/en/page/156-30-must-try-japanese-foods"><img src="img/food.jpg" alt="img" draggable="false" title="Food, Drink"></a>
             </div>
         </div>
-
 
 </body>
 
 </html>
+
 
 

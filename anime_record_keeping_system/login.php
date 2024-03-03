@@ -2,6 +2,7 @@
 
     session_start();
     $_SESSION['loggedin'] = false;
+    $backgroundImage = 'url("img/login.png")';
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         include('components/connection.php'); 
@@ -20,21 +21,25 @@
             $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
             $count = mysqli_num_rows($result);  
             
-            /* PFP database try */
-            /*$pfp = $con->query("SELECT pfp FROM user WHERE username = $username");*/            
-
-            $_SESSION['username'] = "login first";
-
             if($count == 1)
             {  
                 $_SESSION['loggedin'] = true;
                 header("Location: myacc.php");
                 $_SESSION['username'] = $username;
                 $_SESSION['roles'] = $row['roles'];
+            } 
+            else
+            {
+                $backgroundImage = 'url("img/login_alert.png")';
             }
-            else {
-                echo "<div class='alert'> Invalid username or password! <br> Try again. </div>";
-            }    
+
+            echo '<style>';
+            echo '#myDiv {background-image: '.$backgroundImage.';}';
+            echo '#myDiv {width : 70%;}';
+            echo '#myDiv {height : 90%;}';
+            echo '#myDiv {margin-left : -6%;}';
+            echo '#myDiv {margin-top : 8%;}';
+            echo '</style>';
     }
 ?>
 
@@ -43,82 +48,68 @@
 <html lang="en">
 <head>  
     <title>Login</title>  
-    <link href="design/log.css" rel="stylesheet" type="text/css" >   
+    <link href="log.css" rel="stylesheet" type="text/css" >   
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+    <link rel = "icon" href = "img/jp.png" type = "image/x-icon">
+    
     <style>
         body {
-            background-image: url("img/backgrd.jpg"); 
-        }
-
-        /* alert for invalid username or psw */
-        .alert {
-            margin: auto;
-            margin-top: 10px;
-            width: fit-content;
-            height: 50px;
-            border: none;
-            padding: 5px;
-            text-align: center;
-            border-radius: 19px;
-            background: #9e0000;
-            box-shadow: inset -29px -29px 44px #540000,
-            inset 29px 29px 44px #e80000;
-            color: #fff;
-            font-size: 20px;
+            background-image: url("img/background.jpg"); 
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     </style>
-
 </head>  
 
 <body>
 
-    <div class="sidenav">
-        <p class="name"> Anime <br> Above All </p>
+    <!-- I wanna make it upper -->
+    <div class="uppernav">
 
-        <?php 
-            if ($_SESSION['loggedin'] != true) {
-                echo "<img class='pfp' src=\"img/nopfp.jpg\" alt=\"PFP\" />";
-                echo "<h2 class='uname'> login first </h2>";
-            }
-            else {
-                     /*PFP database try*/
-                    /* while($row = $pfp->fetch_assoc()) {
-                        echo '<img src="data:image/jpg;charset=utf8;base64,'.base64_encode( $row['image'] ).'"/>';
-                    } */
-                    echo "<img class='pfp' src=\"img/".$_SESSION['username'] ."PFP.jpg\" alt=\"PFP\" />";
-                    echo "<h2 class='uname'> ".$_SESSION['username'] ." </h2>";
-            }
-        ?>
-        
+        <a href="home.php"> <div class="name">  Anime Above All </div> </a>
 
-        <br><br>
-
-        <a href="home.php"> <i class="material-icons">home</i> Home </a>
-        <a href="signup.php"> <i class="material-icons">add_reaction</i> Sign Up </a>
+        <div class="minis">
+            <a class="minibut" href="signup.php"> <button> <i class="material-icons">add_reaction</i> </button> </a>
+        </div>
     </div>
 
 
-    <div class="inner">  
-        <div class="title"> Login </div>
+    <!-- image change try -->
+    <div id="myDiv" class="img_there"></div>
+    
+
+    <!-- LOGIN FORM -->
+    <div class="inner"> 
+        <div class="title"> Hello! <br> Welcome Back </div>
         <form name="f1" action="login.php"  method="POST">  
             
             <div>   
-                <input placeholder="UserName" type="text" id="user" name="user" oninvalid="InvalidMsg(this);" required/>  
+                <input placeholder="UserName" type="text" id="user" name="user" value="<?php echo isset($_POST['user']) ? htmlspecialchars($_POST['user']) : ''; ?>" oninvalid="InvalidMsg(this);" required/>  
             </div>  
             
             <div>   
-                <input placeholder="Password" type="password" id ="pass" name ="pass" oninvalid="InvalidMsg(this);" required/>  
+                <input placeholder="Password" type="password" id ="pass" name ="pass" value="<?php echo isset($_POST['pass']) ? htmlspecialchars($_POST['pass']) : ''; ?>" oninvalid="InvalidMsg(this);" required/>  
             </div> 
+
+            <!-- forgot password place -->
             
-            <button type="submit">
-		        Let's Go!
-		    </button>  
+            <div class="center">
+                <button type="submit">
+                    Let's Go!
+                </button>
+            </div>  
+
+            <!-- line -->
+            <hr width="95%"/>
+
+            <!-- Dont have an account?  Create Account! -->
+            <h2>Don't have an account? <a href="signup.php">Create Account!</a></h2>
 
         </form>  
     </div>  
   
     <script>   
+            //check for every input has text
             function InvalidMsg(textbox) {
             if (textbox.value == '') {
                 textbox.setCustomValidity('Please fill out this field');

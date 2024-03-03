@@ -3,6 +3,8 @@ body, html {
     height: 100%;
     margin: 0;
     background-image: url('img/homeWP.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* japanese look alike font */
@@ -13,7 +15,7 @@ body, html {
 
 /*web site's name*/
 .name {
-    font-size: 80px;
+    font-size: 530%;
     color: #000000;
     text-align: center;
     font-family: MainFont;
@@ -26,7 +28,7 @@ body, html {
 
 /* teaser */
 .teaser {
-    font-size: 20px;
+    font-size: 160%;
     color: #000000;
     font-family: MainFont;
     text-align: left;
@@ -37,18 +39,12 @@ body, html {
     position: fixed;
 }
 
-/*user's choosen name*/
-.uname {
-    color: #000000;
-    display: inline;
-}
-
 /*side navigation bar*/
 .uppernav {
     width: 92%;
     position: absolute;
-    top: 5px;
-    left: 16px;
+    top: 0.5%;
+    left: 0.8%;
     float: left;
     margin: 0;
     padding: 0;
@@ -68,29 +64,25 @@ body, html {
 
 /*navbar links*/
 .origina {
-    padding: 6px 8px 6px 16px;
+    padding: 2.5% 0% 0% 6%;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 130%;
     color: #000000;
     display: block;
     text-align: left;
     float: right;
-    margin-top: 25px;
-    margin-left: 20px;
-    font-family: MainFont;
+    font-family: cursive;
 }
 
 .newa {
-    padding: 6px 35px 4px 60px;
+    padding: 2.5% 1% 0% 12%;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 130%;
     color: #000000;
     display: block;
     text-align: left;
     float: right;
-    margin-top: 25px;
-    margin-left: 10px;
-    font-family: MainFont;
+    font-family: cursive;
 }
 
 a {
@@ -115,20 +107,41 @@ a {
 /*user's pfp*/
 .pfp {
     vertical-align: middle;
-    width: 65px;
-    height: 65px;
+    width: 5%;
+    height: 5%;
     border-radius: 50%;
-    padding-top: 10px;
+    padding-top: 0.5%;
     display: inline;
+}
+
+/*user's choosen name*/
+.uname {
+    color: #000000;
+    display: inline;
+    font-family: cursive;
+    font-size: 120%;
 }
 
 
 /* search */
 .search-container {
-    margin-top: 3%;
-    margin-left: 20%;
+    margin-top: 2.5%;
+    margin-left: 18%;
     width: 50%;
     float: right;
+}
+
+/* no data in database */
+.alert {
+    top: 30%;
+    left: 25%;
+    width: 45%;
+    height: 30%;
+    background-image: url(img/home_alert.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: +1;
 }
 
 /* do I need a button? */
@@ -148,18 +161,19 @@ a {
 } */
 
 .search-container input[type=text] {
-    border-radius: 5px;
-    width: 70%;
-    height: 20px;
-    padding: 5px;
     border-radius: 30px;
-    border: 3px solid #fe791a;
+    width: 70%;
+    height: 8%;
+    padding: 2%;
+    font-size: 100%;
+    font-family: cursive;
+    border: 3px solid #ff0000;
 }
 
 .search-container input[type=text]:focus {
-    border: 3px solid #660000;
+    border: 3px solid #ff4400;
     outline: none;
-}
+} 
 
 
 /* anime */ 
@@ -167,13 +181,13 @@ a {
     width: 8%;
     height: 30%;
     font-family: MainFont;
-    font-size: 35px;
+    font-size: 210%;
     color: #000000;
     writing-mode: vertical-lr;
     text-orientation: upright;
     text-align: center;
     margin-top: 30%;
-    margin-left: 17%;
+    margin-left: 18%;
     position: fixed;
     border: 5px solid black;
     border-radius: 5%;
@@ -195,13 +209,13 @@ a {
     width: 8%;
     height: 30%;
     font-family: MainFont;
-    font-size: 35px;
+    font-size: 210%;
     color: #ffffff;
     writing-mode: vertical-lr;
     text-orientation: upright;
     text-align: center;
     margin-top: 30%;
-    margin-left: 27%;
+    margin-left: 28%;
     position: fixed;
     border: 5px solid black;
     border-radius: 5%;
@@ -219,7 +233,7 @@ a {
 
 
 /* culture  */
-.culture {
+.jc {
     width: 50%;
     height: 100%;
     display: inline-block;
@@ -228,24 +242,26 @@ a {
 }
 
 /*dresses*/
-.dresses {
-    width: 20%;
+.culture {
+    width: 72%;
+    height: 100%;
     writing-mode: vertical-lr;
     text-orientation: upright;
     text-align: center;
     position: relative;
-    z-index: 1;
+    font-size: 90%;
 }
 
-.dresses img {
+.culture img {
+    width: 100%;
+    height: 100%;
     position: relative;
-    z-index: 1;
 }
 
 /* culture title*/
 h2 {
     font-family: MainFont;
-    font-size: 25px;
+    font-size: 170%;
 }
 
 /* festivals */

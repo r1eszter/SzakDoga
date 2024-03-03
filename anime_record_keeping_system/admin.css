@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: lightslategray;
+    background-color: rgb(255, 255, 255);
 }
 
 /* japanese look alike font */
@@ -9,12 +9,30 @@ body {
     src: url('myfont.ttf');
 }
 
+/* the table style for all */
 table {
     width: 100%;
+    border-collapse: collapse;
     background-color: rgb(255, 255, 255);
     text-align: center;
     margin-top: 5%;
-    position: fixed;
+    position: absolute;
+    z-index: 1;
+}
+
+/* the head of each table */
+th {
+    background-color: crimson;
+    color: white;
+}
+
+tr:hover {
+    background-color: rgb(233, 90, 90);
+}
+
+/* anime and manga table hidden by default */
+.at, .mt {
+    display: none;
 }
 
 .synopsis {
@@ -22,32 +40,44 @@ table {
     width: 50%;
 }
 
+/* Home icon */
 .home i{
-    color: white;
+    color: rgb(128, 0, 0);
     font-size: 25px;
     margin-top: 2%;
     margin-left: 15px;
     position: fixed;
 }
 
+/* Admin title */
 .name {
     width: fit-content;
     text-align: left;
     font-family: MainFont;
     margin-left: 5%;
-    color: #fff;
+    color: #000000ce;
     position: fixed;
 }
 
+/* User, Anime, Manga choose for the table view */
 .choose {
     font-family: MainFont;
-    color: white;
+    color: rgb(78, 2, 2);
     position: fixed;
-    margin-left: 50%;
+    margin-left: 40%;
     margin-top: 2%;
+    font-size: 25px;
+}
+
+/* User, Anime, Manga labels for the table view */
+.user, .anime, .manga {
+    padding: 15px;
 }
 
 
+
+
+/* FORM part */
 /* Button to open the form */
 .add-button {
     background-color: #555;
@@ -73,6 +103,7 @@ table {
     top: 45px;
     right: 50px;
     font-family: MainFont;
+    z-index: 3;
 }
 
 /* Form container */
