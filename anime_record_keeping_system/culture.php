@@ -1,5 +1,10 @@
-<?php $pagename='Culture'; ?>
-<!-- traditonal dresses, people, architecture, attractions -->
+<?php 
+    $pagename='Culture'; 
+
+    session_start();
+    require('components/connection.php');
+?>
+<!-- traditional dresses, people, architecture, attractions -->
 
 <!doctype html>
 <html lang="en">
@@ -14,25 +19,61 @@
 <body>
      <!-- navbar (wp name, links) -->
     <ul>
-        <li class="name">Anime Above All</li>
         <li><a href="home.php">home</a></li>
     </ul>
 
-    
-    <table>
-        <!-- japan -->
-        <tr>
-            <th class="teaser"><h1>JAPAN</h1>  <div class="jp_teaser">Japan has a fascinating and multifaceted culture; on the one hand it is steeped in the deepest of traditions dating back thousands of years; on the other it is a society in a continual state of rapid flux, with continually shifting fads and fashions and technological development that constantly pushes back the boundaries of the possible. </div> </th>
-            <th class="photo"><img class="main_japan" src="img/japan_main.png"/></th>
-        </tr>
 
-        <!-- tokyo -->
-        <tr>
-            <td>TOKYO</td>
-            <td></td>
-        </tr>
+    <!-- Top for presentation -->
+    <div class="top">
+        <h1>JAPAN CULTURE</h1> 
+        <div class="reddot">    
+            <h2>Anime Above All</h2>
+        </div>
+    </div>
 
-    </table>
+
+    <!-- Links for the same page -->
+    <div class="choose">
+        <a href="#tokyo"><div class="c1">Capital</div></a>
+        <a href="#dress"><div class="c2">Traditional dresses</div></a>
+        <a href="#people"><div class="c3">People and Religion</div></a>
+        <a href="#arch"><div class="c4">Architect</div></a>
+        <a href="#attract"><div class="c5">Attractions</div></a>
+    </div>
+
+
+    <!-- Capital, Tokyo -->
+    <div id="tokyo">
+        <?php 
+            $sql = "SELECT * FROM culture WHERE name = 'Capital'";
+            $tokyo_result = mysqli_query($con, $sql);
+
+            while($row = mysqli_fetch_assoc($tokyo_result)) {
+                echo "<div> TOKYO </div>";
+                echo "<div> fowjfopjfpol,dféwlkgőpetkhworjpingqioernb</div>";
+            } ?>
+    </div>
+
+    <!-- Traditional dresses -->
+    <div id="dress">
+
+    </div>
+
+    <!-- People and Religion -->
+    <div id="people">
+
+    </div>
+
+    <!-- Architect -->
+    <div id="arch">
+
+    </div>
+
+    <!-- Attractions -->
+    <div id="attract">
+
+    </div>
+
 
 </body>
 

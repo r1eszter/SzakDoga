@@ -1,5 +1,5 @@
 <?php 
-    $pagename='Attack on Titan'; 
+    $pagename='One Punch Man'; 
     session_start();
     include('../components/connection.php');  
 
@@ -16,18 +16,7 @@
     /* get img from database */
     $result_for_main = $con->query("SELECT main_img FROM anime WHERE etitle = '$pagename'");
     $result_for_bg = $con->query("SELECT WP FROM anime WHERE etitle = '$pagename'");
-    
-    
-    /* for adding to seen profile */
-    /* $sql2 = "SELECT anime_id FROM anime WHERE etitle = '$pagename'";
-    $aid = mysqli_query($con, $sql2); */
-    $aid = $con->query("SELECT anime_id FROM anime WHERE etitle = '$pagename'");
 
-   /*  $sql3 = "SELECT user_id FROM user WHERE username = '$usern'";
-    $uid = mysqli_query($con, $sql3); */
-    $uid = $con->query("SELECT user_id FROM user WHERE username = '$usern'");
-    
-    echo "<p> anime id : ". $aid ." and the user id". $uid ." </p>";
 
     /* for search */
     if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -75,30 +64,15 @@
 
     <style>
         a:visited {
-            color: rgb(34, 62, 34);
+            color: rgb(255, 255, 0);
         }
 
-        /*button that i am proud of*/
-        button {
-            padding: 0.5%;
-            width: 80px;
-            height: 30px;
-            border: none;
-            outline: none;
-            background-color: rgb(0, 102, 0);
-            font-size: 12px;
-            font-weight: 700;
-            color: #fff;
-            border-radius: 5px;
-            transition: all ease 0.1s;
-            box-shadow: 0px 5px 0px 0px rgb(0, 51, 0);
-            margin-left: 15%;
-            font-size: 100%;
+        .title {
+            margin-left: 10%;
         }
 
-        button:active {
-            transform: translateY(5px);
-            box-shadow: 0px 0px 0px 0px rgb(0, 51, 0);
+        .data {
+            margin-left: 17%;
         }
     </style>
 </head>
@@ -135,57 +109,42 @@
         </li>
     </ul>
 
+
     <!-- main -->
     <div class="main">
         <!-- the anime titlte and some date -->
         <div class="title" style="color: white;">
             <?php while($row = mysqli_fetch_assoc($title_result)) {
-                echo "<p> - ". $row["fin"] ." -   <button onclick='seen()'> watch </button> </p>" ; 
-        
-                /* the english title of the page */
-                echo"<h1 class='eng'>$pagename</h1>";
+                echo "<p> - ". $row["fin"] ." - </p>"; 
+            
+            /* the english title of the page */
+            echo"<h1 class='eng'>$pagename</h1>";
 
-                /* the japanes title */
-                echo "<h1 class='jap' style='color: rgb(34, 62, 34);'>". $row["jtitle"] . "</h1>"; 
+            /* the japanes title */
+            echo "<h1 class='jap' style='color: rgb(255, 255, 0);'>". $row["jtitle"] . "</h1>"; 
             } ?>
         </div>
 
-        
 
         <!-- more datas -->
         <div class="data" style="color: white;">
             <?php while($row = mysqli_fetch_assoc($data_result)) {
-                echo "<p class='prog' style='color: rgb(34, 62, 34);'>Synopsis</p>";
+                echo "<p class='prog' style='color: rgb(255, 255, 0);'>Synopsis</p>";
                 echo $row["synopsis"];
 
-                echo "<p class='prog' style='text-align: center; font-size: 140%; color: rgb(34, 62, 34);'> <br> ". $row["episodes"] . " episodes </p>";
+                echo "<p class='prog' style='text-align: center; font-size: 140%; color: rgb(255, 255, 0);'> <br> ". $row["episodes"] . " episodes </p>";
                 
-                echo "<p class='prog' style='color: rgb(34, 62, 34);'> <br> Genres </p>";
+                echo "<p class='prog' style='color: rgb(255, 255, 0);'> <br> Genres </p>";
                 echo $row["genres"];
                 
-                echo "<p class='prog' style='color: rgb(34, 62, 34);'> <br> Studio </p>";
+                echo "<p class='prog' style='color: rgb(255, 255, 0);'> <br> Studio </p>";
                 echo $row["studio"];
 
-                echo "<p class='prog' style='color: rgb(34, 62, 34);'> <br> Aired </p>";
+                echo "<p class='prog' style='color: rgb(255, 255, 0);'> <br> Aired </p>";
                 echo "<p> ". $row["start_aired"]."  -to-  ". $row["stoped_aired"] . "</p>";  
             } ?>
         </div>
     </div>
-
-
-    <script>
-        let buttonText = "watched";
-        function seen() {
-            const button = document.querySelector('button');
-            button.innerHTML = buttonText;
-            if (buttonText === "watch") {
-                buttonText = "watched";
-            }
-            else {
-                buttonText = "watch";
-            }
-        }
-    </script>
 
 </body>
 

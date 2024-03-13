@@ -12,6 +12,7 @@
     echo "<title>$pagename</title>";
     $usern = $_SESSION['username'];
 
+    /* get img from database */
     $result = $con->query("SELECT pfp FROM user WHERE username = '$usern'"); 
 ?>
 
@@ -47,6 +48,7 @@
 
             <!-- pfp and username -->
             <div class="bottommain">
+                
                 <!-- get the image from sql -->
                 <?php if($result->num_rows > 0){ ?> 
                 <div class="profile"> 
