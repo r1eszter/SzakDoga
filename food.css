@@ -1,0 +1,199 @@
+body {
+    margin: 0;
+
+}
+
+
+/* japanese look alike font */
+@font-face {
+    font-family: MainFont;
+    src: url('myfont.ttf');
+}
+
+/* navbar */
+ul {
+    list-style-type: none;
+    margin-top: 0.5%;
+    margin-left: 0.5%;
+    margin-right: 1%;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+/* pfp image with href to my acc */
+.user {
+    margin-top: -1.8%;
+    float: left;
+}
+
+li {
+    float: right;
+}
+
+.ha {
+    font-size: 100%;
+    font-family: cursive;
+    display: block;
+    text-align: center;
+    padding: 6px 9px;
+    margin-top: 10%;
+    text-decoration: none;
+    color: #000000;
+}
+
+
+/*user's pfp*/
+.pfp {
+    margin-top: 40%;
+    vertical-align: middle;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: inline;
+}
+
+
+/* food "waterfall" */
+.sushi {
+    position: absolute;
+    margin-left: 29%;
+    margin-top: 6%;
+    width: fit-content;
+    height: fit-content;
+}
+
+.sushi img{
+    width: 100px;
+    height: 100px;
+}
+
+
+.temp {
+    position: absolute;
+    margin-left: 48%;
+    margin-top: -3%;
+    width: fit-content;
+    height: fit-content;
+}
+
+.temp img{
+    width: 150px;
+    height: 150px;
+}
+
+
+.tak {
+    position: absolute;
+    margin-left: 60%;
+    margin-top: 6%;
+    width: fit-content;
+    height: fit-content;
+}
+
+.tak img{
+    width: 150px;
+    height: 150px;
+}
+
+
+.on {
+    position: absolute;
+    margin-left: 32%;
+    margin-top: -6%;
+    width: fit-content;
+    height: fit-content;
+}
+
+.on img{
+    width: 150px;
+    height: 150px;
+}
+
+
+.tai {
+    position: absolute;
+    margin-left: 63%;
+    margin-top: -5%;
+    width: fit-content;
+    height: fit-content;
+}
+
+.tai img{
+    width: 150px;
+    height: 150px;
+}
+
+
+.fru {
+    position: absolute;
+    margin-left: 30%;
+    margin-top: 17%;
+    width: fit-content;
+    height: fit-content;
+}
+
+.fru img{
+    width: 150px;
+    height: 150px;
+}
+
+
+.dum {
+    position: absolute;
+    margin-left: 42%;
+    margin-top: 10%;
+    width: fit-content;
+    height: fit-content;
+}
+
+.dum img{
+    width: 150px;
+    height: 150px;
+}
+
+
+.dan {
+    position: absolute;
+    margin-left: 64%;
+    margin-top: 17%;
+    width: fit-content;
+    height: fit-content;
+}
+
+.dan img{
+    width: 150px;
+    height: 150px;
+}
+
+
+.bento {
+    position: absolute;
+    margin-left: 52%;
+    margin-top: 18%;
+    width: fit-content;
+    height: fit-content;
+}
+
+.bento img{
+    width: 150px;
+    height: 150px;
+}
+
+
+
+
+/* the big botton bowl */
+.bowl {
+    margin-left: 14%;
+    position: absolute;
+    bottom: 0px;
+    width: fit-content;
+    height: fit-content;
+    z-index: -1;
+}
+
+.bowl img {
+    width: 1150px;
+    height: 300px;
+}

@@ -1,0 +1,160 @@
+/* login & signup */
+body {
+    justify-content: center;
+    height: 100vh;
+    background-size: inherit;
+    height: 100%;
+    margin: 0;
+}
+
+
+/*form customise*/
+.inner {
+    left: 53%;
+    top: 50%;
+    position: absolute;
+    width: 380px;
+    height: 500px;
+    
+    transform: translate(0, -50%);
+    background-color: transparent;
+    background: lightgrey;
+
+    border-radius: 5px;
+    border: 2px solid #323232;
+    box-shadow: 4px 4px #323232;
+    
+    perspective: 1000px;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
+    gap: 5px;
+    
+}
+
+/* form title */
+.title {
+    margin: 0px 0 25px 0;
+    font-size: 45px;
+    font-weight: 900;
+    text-align: center;
+    color: #323232;
+}
+
+
+/* the form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/*form's inputs*/
+input {
+    width: 380px;
+    height: 60px;
+    border-radius: 5px;
+    border: 2px solid #323232;
+    background-color: #fff;
+    box-shadow: 4px 4px #323232;
+    font-size: 15px;
+    font-weight: 600;
+    color: #323232;
+    padding: 5px 10px;
+    outline: none;
+}
+
+input:focus {
+    border: 2px solid #f02d2d;
+}
+
+input::placeholder {
+    color: #666;
+    opacity: 0.8;
+}
+
+
+/*button that i am proud of*/
+button {
+    margin: 20px 0 20px 0;
+    width: 180px;
+    height: 60px;
+    border-radius: 5px;
+    border: 2px solid #323232;
+    background-color: #fff;
+    box-shadow: 4px 4px #323232;
+    font-size: 19px;
+    font-weight: 600;
+    color: #323232;
+    cursor: pointer;
+}
+
+button:active {
+    box-shadow: 0px 0px #323232;
+    transform: translate(3px, 3px);
+}
+
+
+
+/*upper navigation bar*/
+.uppernav {
+    height: 10%; 
+    width: 100%; 
+    position: fixed;  
+    padding-left: 15px;
+}
+
+.minis {
+    position: relative;
+    display: inline;
+    margin-top: 1.4%;
+    margin-left: 94%;
+}
+
+.minibut button {
+    width: 3%;
+    height: 55%;
+    text-align: center;
+    padding-top: 0.35%;
+}
+
+/*web site's name*/
+.name {
+    position: fixed;
+    display: inline;
+    margin-top: 0.8%;
+    font-size: 25px;
+    color: #f1f1f1;
+    font-family: fantasy;
+    background-color: #323232;
+    width: 10%;
+    height: 9%;
+    text-align: center;
+    border-radius: 30px;
+    padding-top: 0.5%;
+}
+
+.img_there {
+    width: 60%;
+    height: 80%;
+    margin-left: 0%;
+    margin-top: 11%;
+    position: fixed;
+    display: inline;
+    background-image: url("img/login.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 67%;
+}
+
+
+

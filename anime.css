@@ -1,0 +1,150 @@
+/* japanese look alike font */
+@font-face {
+    font-family: MainFont;
+    src: url('myfont.ttf');
+}
+
+body {
+    width: 100%;
+    background-color: #292929;
+    margin: 0;
+}
+
+/* title maybe links? */
+.navbar {
+    width: 100%;
+    height: 10%;
+    top: 0;
+    left: 0;
+    padding: 0 1%;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+    font-family: MainFont;
+    font-size: 145%;
+}
+
+/* search bar */
+.right-side {
+    display: block;
+    margin-left: 65%;
+}
+
+.right-side input[type=text] {
+    height: 15%;
+    width: 100%;
+    height: 30px;
+    padding: 0.5%;
+    font-size: 100%;
+    font-family: cursive;
+    color: #fff;
+}
+
+/* no data in database */
+.alert {
+    top: 30%;
+    left: 25%; 
+    width: 45%;
+    height: 30%;
+    background-image: url(img/home_alert.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: +1;
+}
+
+
+/* top slide show */
+.container {
+    position: relative;
+    width: 100%;
+    margin-top: 1%;
+}
+
+.pfp {
+    vertical-align: middle;
+    height: 400px;
+}
+
+.mySlides {
+    display: none;
+}
+
+.caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+/* small slide shows */
+.small-slideshow {
+    width: 90%;
+    position: relative;
+    margin: auto;
+}
+
+.small-prev,
+.small-next {
+  cursor: pointer;
+  position: absolute;
+  top: 60%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.small-next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.small-prev:hover,
+.small-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+p {
+    color: white;
+    font-size: 120%;
+    font-family: cursive;
+}
